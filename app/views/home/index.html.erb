@@ -1,7 +1,76 @@
 <% if current_user.admin? %>
-    <%= @provider_count %>
-    <%= @patient_count %>
-    <%= @appointment_count %>
+
+<br>
+<br>
+<div style="text-align: center; font-size: 24px;">Patient Zero Admin Dashboard</div>
+<br>
+<br>
+
+<div style="display: flex; justify-content: center; gap: 50px;">
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Providers</h5>
+    <p class="card-text">Number of providers:</p>
+    <p><%= @provider_count %></p>
+    <a href="http://localhost:3000/providers" class="btn btn-primary">View providers</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Patients</h5>
+    <p class="card-text">Number of patients:</p>
+    <p><%= @patient_count %></p>
+    <a href="http://localhost:3000/patients" class="btn btn-primary">View patients</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Appointments</h5>
+    <p class="card-text">Number of appointments:</p>
+    <p><%= @appointment_count %></p>
+    <a href="http://localhost:3000/appointments" class="btn btn-primary">View appointments</a>
+  </div>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
 <% else %>
-    Not admin!
+
+<br>
+<br>
+<div style="text-align: center; font-size: 24px;">Welcome to Patient Zero!</div>
+<br>
+<br>
+
+<div style="display: flex; justify-content: center; gap: 50px;">
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Patients</h5>
+    <a href="http://localhost:3000/patients" class="btn btn-primary">View and make patients</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Appointments</h5>
+    <a href="http://localhost:3000/appointments" class="btn btn-primary">View and make appointments</a>
+  </div>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
 <% end %>
