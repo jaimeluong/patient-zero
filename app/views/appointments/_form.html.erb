@@ -1,0 +1,27 @@
+<%= form_with model: @appointment do |form| %>
+    <%= form.label :start_date, "Start time: " %>
+    <%= form.datetime_local_field :start_date %><br><br>
+
+    <%= form.label :end_date, "End time: " %>
+    <%= form.datetime_local_field :end_date %><br><br>
+
+    <%= form.radio_button :category, "Routine" %>
+    <%= form.label :category_routine, "Routine" %>
+    <%= form.radio_button :category, "Follow-up" %>
+    <%= form.label :category_followup, "Follow-up" %>
+    <%= form.radio_button :category, "Urgent" %>
+    <%= form.label :category_urgent, "Urgent" %>
+
+    <br>
+
+    <%= form.label :description, "Description: " %>
+    <%= form.text_area :description, size: "40x3" %><br><br>
+
+    <%= form.label :provider_id, "Provider: " %>
+    <%= form.number_field :provider_id %><br><br>
+
+    <%= form.label :patient_id, "Patient: " %>
+    <%= form.number_field :patient_id %><br><br>
+
+    <%= submit_tag("Submit") %>
+<% end %>

@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+
+<%= flash[:saved] %>
+<%= flash[:updated] %>
+<h3 style="text-align: center;">View details for <%= @appointment.patient.first_name %> <%= @appointment.patient.last_name %>'s appointment</h3>
+
+<p style="text-align: center;">Start date: <%= @appointment.start_date %></p>
+<p style="text-align: center;">End date: <%= @appointment.end_date %></p>
+<p style="text-align: center;">Category: <%= @appointment.category %></p>
+<p style="text-align: center;">Description: <%= @appointment.description %></p>
+<p style="text-align: center;">Associated provider: <%= @appointment.provider.position %> <%= @appointment.provider.first_name %> <%= @appointment.provider.last_name %></p>
+
+<p style="text-align: center;"><%= link_to "Edit appointment", edit_appointment_path %><br></p>
+<p style="text-align: center;"><%= link_to "Delete appointment", appointment_path(@appointment), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %></p>
+
+<p style="text-align: center;"><%= link_to "Return home", root_path %></p>

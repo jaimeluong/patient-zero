@@ -1,0 +1,25 @@
+<br>
+<br>
+<br>
+
+<h1>Edit details for <%= @appointment.patient.first_name %> <%= @appointment.patient.last_name %>'s appointment</h1>
+
+<%= render "form" %>
+
+<br>
+
+<%= link_to "Delete appointment", appointment_path(@appointment), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %>
+
+<br>
+
+<%= link_to "Return to appointment", appointment_path %>
+
+<br><br>
+
+<%= flash.now[:error] %>
+
+<br>
+<br>
+<br>
