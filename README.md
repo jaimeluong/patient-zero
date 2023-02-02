@@ -1,24 +1,22 @@
-# README
+# Patient Zero
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Patient Zero is a full-stack app built with Rails 7 for medical professionals to manage patient records and for patients to schedule appointments.
 
-Things you may want to cover:
+This app supports CRUD operations on providers, patients, and appointments. It uses Bootstrap through cssbundling-rails for the views as well as the Devise gem for authentication to log in and out and authorization to certain operations via an admin role. Data is stored in a PostgreSQL database.
 
-* Ruby version
+- **Ruby version:** 3.1.2
 
-* System dependencies
+- **Rails version:** 7.0.4.2
 
-* Configuration
+- **System dependencies:** Ruby, Rails, PostgreSQL, Bootstrap, Devise, cssbundling-rails
 
-* Database creation
+## To run
 
-* Database initialization
+Make sure you have npm and Yarn installed in addition to the required dependencies.
 
-* How to run the test suite
+App will be viewable at [localhost](http://localhost:3000/) and ran on port 3000.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ git clone git@github.com:jaimeluong/patient-zero.git
+$ rails s
+```
