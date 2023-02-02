@@ -2,6 +2,9 @@ class ProvidersController < ApplicationController
     before_action :authenticate_user!
 
     def index
+        unless current_user.admin?
+            render "forbidden"
+        end
         @providers = Provider.all
 
         respond_to do |format|
@@ -13,6 +16,9 @@ class ProvidersController < ApplicationController
     end
 
     def show
+        unless current_user.admin?
+            render "forbidden"
+        end
         @provider = Provider.find(params[:id])
 
         respond_to do |format|
@@ -24,6 +30,9 @@ class ProvidersController < ApplicationController
     end
 
     def new
+        unless current_user.admin?
+            render "forbidden"
+        end
         @provider = Provider.new
     end
 
@@ -40,6 +49,9 @@ class ProvidersController < ApplicationController
     end
 
     def edit
+        unless current_user.admin?
+            render "forbidden"
+        end
         @provider = Provider.find(params[:id])
     end
 
