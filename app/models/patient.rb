@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
   belongs_to :provider
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
