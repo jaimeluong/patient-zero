@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+
+<%= flash[:saved] %>
+<%= flash[:updated] %>
+<h3 style="text-align: center;">View details for <%= @patient.first_name %> <%= @patient.last_name %></h3>
+
+<p style="text-align: center;">Name: <%= @patient.first_name %> <%= @patient.last_name %></p>
+<p style="text-align: center;">Age: <%= @patient.age %></p>
+<p style="text-align: center;">Sex: <%= @patient.sex %></p>
+<p style="text-align: center;">Medical notes: <%= @patient.medical_notes %></p>
+<p style="text-align: center;">Associated provider: <%= @patient.provider.position %> <%= @patient.provider.first_name %> <%= @patient.provider.last_name %></p>
+
+<p style="text-align: center;"><%= link_to "Edit patient", edit_patient_path %><br></p>
+<p style="text-align: center;"><%= link_to "Delete patient", provider_path(@patient), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %></p>
+
+<p style="text-align: center;"><%= link_to "Return home", root_path %></p>

@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+
+<%= flash[:destroyed] %>
+<h3 style="text-align: center;">Manage patients</h3>
+
+<br>
+
+<div style="display:flex; justify-content: center">
+<ol>
+<% @patients.each { |patient| %>
+    <li>
+        <%= link_to (patient.first_name + " " + patient.last_name), patient %>
+    </li>
+<% } %>
+</ol>
+</div>
+
+<p style="text-align: center;"><%= link_to "New patient", new_patient_path %></p>
+
+<br>
+<br>
+<br>

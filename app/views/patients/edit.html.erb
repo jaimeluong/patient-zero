@@ -1,0 +1,25 @@
+<br>
+<br>
+<br>
+
+<h1>Edit details for <%= @patient.first_name %> <%= @patient.last_name %></h1>
+
+<%= render "form" %>
+
+<br>
+
+<%= link_to "Delete patient", patient_path(@patient), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %>
+
+<br>
+
+<%= link_to "Return to patient", patient_path %>
+
+<br><br>
+
+<%= flash.now[:error] %>
+
+<br>
+<br>
+<br>
