@@ -1,0 +1,17 @@
+<br>
+<br>
+<br>
+
+<%= flash[:saved] %>
+<%= flash[:updated] %>
+<h3 style="text-align: center;">View details for <%= @provider.position %> <%= @provider.last_name %></h3>
+
+<p style="text-align: center;">Name: <%= @provider.first_name %> <%= @provider.last_name %></p>
+<p style="text-align: center;">Role: <%= @provider.position %></p>
+
+<p style="text-align: center;"><%= link_to "Edit provider", edit_provider_path %><br></p>
+<p style="text-align: center;"><%= link_to "Delete provider", provider_path(@provider), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %></p>
+
+<p style="text-align: center;"><%= link_to "Return home", root_path %></p>

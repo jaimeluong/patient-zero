@@ -1,0 +1,25 @@
+<br>
+<br>
+<br>
+
+<h1>Edit details for <%= @provider.position %> <%= @provider.last_name %></h1>
+
+<%= render "form" %>
+
+<br>
+
+<%= link_to "Delete provider", provider_path(@provider), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %>
+
+<br>
+
+<%= link_to "Return to provider", provider_path %>
+
+<br><br>
+
+<%= flash.now[:error] %>
+
+<br>
+<br>
+<br>

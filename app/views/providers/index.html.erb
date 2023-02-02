@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+
+<%= flash[:destroyed] %>
+<h3 style="text-align: center;">Manage providers</h3>
+
+<br>
+
+<div style="display:flex; justify-content: center">
+<ol>
+<% @providers.each { |provider| %>
+    <li>
+        <%= link_to (provider.first_name + " " + provider.last_name), provider %>
+    </li>
+<% } %>
+</ol>
+</div>
+
+<p style="text-align: center;"><%= link_to "New provider", new_provider_path %></p>
+
+<br>
+<br>
+<br>
