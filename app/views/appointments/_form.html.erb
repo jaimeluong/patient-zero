@@ -5,14 +5,13 @@
     <%= form.label :end_date, "End time: " %>
     <%= form.datetime_local_field :end_date %><br><br>
 
+    Appointment type:
     <%= form.radio_button :category, "Routine" %>
     <%= form.label :category_routine, "Routine" %>
     <%= form.radio_button :category, "Follow-up" %>
     <%= form.label :category_followup, "Follow-up" %>
     <%= form.radio_button :category, "Urgent" %>
-    <%= form.label :category_urgent, "Urgent" %>
-
-    <br>
+    <%= form.label :category_urgent, "Urgent" %><br><br>
 
     <%= form.label :description, "Description: " %>
     <%= form.text_area :description, size: "40x3" %><br><br>

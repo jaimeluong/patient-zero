@@ -8,12 +8,11 @@
     <%= form.label :age, "Age: " %>
     <%= form.number_field :age, step: 1 %><br><br>
 
+    Sex:
     <%= form.radio_button :sex, "Male" %>
     <%= form.label :sex_male, "Male" %>
     <%= form.radio_button :sex, "Female" %>
-    <%= form.label :sex_female, "Female" %>
-
-    <br>
+    <%= form.label :sex_female, "Female" %><br><br>
 
     <%= form.label :medical_notes, "Medical notes: " %>
     <%= form.text_area :medical_notes, size: "40x3" %><br><br>

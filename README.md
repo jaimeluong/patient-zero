@@ -2,21 +2,28 @@
 
 Patient Zero is a full-stack app built with Rails 7 for medical professionals to manage patient records and for patients to schedule appointments.
 
-This app supports CRUD operations on providers, patients, and appointments. It uses Bootstrap through cssbundling-rails for the views as well as the Devise gem for authentication to log in and out and authorization to certain operations via an admin role. Data is stored in a PostgreSQL database.
+This app supports create, read, update, and delete (CRUD) operations on providers, patients, and appointments. Bootstrap, installed and loaded with cssbundling-rails, is used to style the views. Devise is implemented for authentication, forcing users to sign-in before accessing any pages, and for authorization via an admin role with special privileges. All data is stored in a PostgreSQL database on my local machine.
 
 - **Ruby version:** 3.1.2
 
 - **Rails version:** 7.0.4.2
 
-- **System dependencies:** Ruby, Rails, PostgreSQL, Bootstrap, Devise, cssbundling-rails
+- **System/gem dependencies:** Ruby, Rails, PostgreSQL, Bootstrap, Devise, cssbundling-rails
 
-## To run
+## Run application
 
-Make sure you have npm and Yarn installed in addition to the required dependencies.
-
-App will be viewable at [localhost](http://localhost:3000/) and ran on port 3000.
+Make sure you have npm and Yarn installed in addition to the required dependencies listed above.
 
 ```
 $ git clone git@github.com:jaimeluong/patient-zero.git
+$ cd patient-zero
 $ rails s
 ```
+
+App will be viewable at [localhost](http://localhost:3000/) and hosted on port 3000.
+
+## Notes
+
+- Rails uses Test::Unit as the default testing framework. When I generated this project, I opted to skip tests with the -T flag allowing for RSpec to be used instead.
+
+- Planning to deploy on Heroku web services soon.

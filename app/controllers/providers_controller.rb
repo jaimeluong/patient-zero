@@ -1,4 +1,5 @@
 class ProvidersController < ApplicationController
+    # Only allow users with admin role to view and access these resources
     before_action :authenticate_user!
 
     def index

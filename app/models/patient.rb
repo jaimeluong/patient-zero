@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
   belongs_to :provider
-  has_many :appointments, dependent: :destroy
+  has_many :appointments, dependent: :destroy # Delete all appointments belonging to a patient if they're removed from database
 
   validates :first_name, presence: true
   validates :last_name, presence: true

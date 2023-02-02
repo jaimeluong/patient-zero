@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user! # Force user to sign in before viewing resources
 
+    # Show all appointments
     def index
         @appointments = Appointment.all
 
@@ -12,6 +13,7 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    # Show appointment based on URL parameters
     def show
         @appointment = Appointment.find(params[:id])
 
@@ -23,10 +25,12 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    # Return form to create a new appointment
     def new
         @appointment = Appointment.new
     end
 
+    # Create a new appointment from submission
     def create
         @appointment = Appointment.new(appointment_params)
 
@@ -39,10 +43,12 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    # Return form to edit an existing appointment
     def edit
         @appointment = Appointment.find(params[:id])
     end
 
+    # Update appointment
     def update
         @appointment = Appointment.find(params[:id])
 
@@ -55,6 +61,7 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    # Delete appointment
     def destroy
         @appointment = Appointment.find(params[:id])
         @appointment.destroy
@@ -65,6 +72,7 @@ class AppointmentsController < ApplicationController
 
     private
 
+    # Require stromg params, including foreign keys for Provider and Patient
     def appointment_params
         params.require(:appointment).permit(:start_date, :end_date, :category, :description, :provider_id, :patient_id)
     end

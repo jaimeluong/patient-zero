@@ -5,15 +5,13 @@
     <%= form.label :last_name, "Last name: " %>
     <%= form.text_field :last_name %><br><br>
 
+    Provider role:
     <%= form.radio_button :position, "Doctor" %>
     <%= form.label :position_doctor, "Doctor" %>
     <%= form.radio_button :position, "Nurse" %>
     <%= form.label :position_nurse, "Nurse" %>
     <%= form.radio_button :position, "Assistant" %>
-    <%= form.label :position_assistant, "Assistant" %>
-
-    <br>
-    <br>
+    <%= form.label :position_assistant, "Assistant" %><br><br>
 
     <%= submit_tag("Submit") %>
 <% end %>

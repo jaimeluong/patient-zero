@@ -1,24 +1,17 @@
-<br>
-<br>
-<br>
-
 <%= flash[:destroyed] %>
+
 <h3 style="text-align: center;">Manage appointments</h3>
 
 <br>
 
 <div style="display:flex; justify-content: center">
-<ol>
-<% @appointments.each { |appointment| %>
-    <li>
-        <%= link_to (appointment.patient.first_name + " " + appointment.patient.last_name + " on " + appointment.start_date.to_s), appointment %>
-    </li>
-<% } %>
-</ol>
+    <ol>
+    <% @appointments.each { |appointment| %>
+        <li>
+            <%= link_to (appointment.patient.first_name + " " + appointment.patient.last_name + " on " + appointment.start_date.to_s), appointment %>
+        </li>
+    <% } %>
+    </ol>
 </div>
 
 <p style="text-align: center;"><%= link_to "New appointment", new_appointment_path %></p>
-
-<br>
-<br>
-<br>
